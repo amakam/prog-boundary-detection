@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href=mystyle1.css>
+	<meta charset="UTF-8">
+	<title>PBD </title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="//cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+	<script src="player.js"></script>
+	<script src="clipper.js"></script>
+</head>
+
+<body>
+
+<div class="container" data-role="page">
+
+<header>  
+	<div data-role="header" data-position="fixed">
+    		<h1>3 Program Boundary Detector</h1>
+  	</div>
+</header>
+
+<div id="row1" class="w3-cell-row borderbottom">
+	<div class="w3-container  w3-cell">
+		<H3> Video URL: </H3> 
+		<input type="text" id="text_videoUrl" size=80 value="https://moctobpltc-i.akamaihd.net/hls/live/571983/tc/news2/hls_playlist1_rendition3.m3u8">	
+		<button class="w3-button w3-light-blue" onclick="playHLS()"> Play </button>
+		<button class="w3-button w3-light-blue" onclick="updateClips()"> CREATE DUMMY cliPS </button>
+	</div>
+	<div class="w3-container  w3-cell">
+		<H3> Auto create clips: </H3>
+		<label class="switch">
+  			<input id="chkbox_auto_clip" type="checkbox" checked>
+  			<span class="slider round"></span>
+		</label>
+	</div>
+</div>
+
+
+<div id="row2" class="w3-cell-row" style="width:100%">
+	<div id="div_video" class="w3-container w3-cell" style="width:70%" align="center" >
+		<video id="video" width="640" controls></video>
+	</div>
+	<div id="div_clips" class="w3-container w3-cell w3-light-grey">
+ 		<h4>Clips created</h4>
+ 		This is a place holder for all the video clips that are created		
+	</div>
+</div>
+
+<div id="row3" class="w3-cell-row w3-light-grey" style="width:100%">
+TechJam 2017 
+</div>
+
+<script>
+for (i = 0; i < 100; i++) { 
+	if(document.getElementById("chkbox_auto_clip").checked == true)
+		updateClips();
+}
+</script>
+
+
+</div>
+</body>
+</html>
